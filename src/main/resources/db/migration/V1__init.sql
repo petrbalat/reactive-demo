@@ -1,5 +1,5 @@
-drop table if exists products;
-create table products
+drop table if exists PRODUCT;
+create table PRODUCT
 (
     id      IDENTITY                NOT NULL PRIMARY KEY,
     name    varchar2(255)           not null,
