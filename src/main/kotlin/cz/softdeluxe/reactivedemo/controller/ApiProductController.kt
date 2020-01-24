@@ -2,6 +2,7 @@ package cz.softdeluxe.reactivedemo.controller
 
 import cz.softdeluxe.reactivedemo.entity.Product
 import cz.softdeluxe.reactivedemo.repository.ProductRepository
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.toList
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

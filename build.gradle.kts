@@ -17,6 +17,13 @@ repositories {
 	maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
+val developmentOnly by configurations.creating
+configurations {
+	runtimeClasspath {
+		extendsFrom(developmentOnly)
+	}
+}
+
 dependencies {
 	implementation("org.springframework.boot.experimental:spring-boot-starter-data-r2dbc")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
@@ -27,6 +34,9 @@ dependencies {
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	runtimeOnly("com.h2database:h2")
 	runtimeOnly("io.r2dbc:r2dbc-h2")
+
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
